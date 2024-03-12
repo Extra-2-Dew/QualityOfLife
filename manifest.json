@@ -1,0 +1,15 @@
+{
+	"name": "QualityOfLife",
+	"description": "Various quality of life improvements",
+	"authors": [
+		"Chris is Awesome"
+	],
+	"version": "1.0.0",
+	"requires": [
+		"ModCore"
+	],
+	"conflicts": [
+
+	],
+	"github-url": "https://github.com/Extra-2-Dew/QualityOfLife"
+}
