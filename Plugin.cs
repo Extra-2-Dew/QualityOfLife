@@ -1,4 +1,6 @@
 ﻿using BepInEx;
+using HarmonyLib;
+using System.Reflection;
 
 namespace QualityOfLife
 {
@@ -10,6 +12,8 @@ namespace QualityOfLife
 		{
 			// Plugin startup logic
 			Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
+
+			Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
 
 			SkipSplash();
 		}
