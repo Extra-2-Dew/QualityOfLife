@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using HarmonyLib;
 using System.Reflection;
+using UnityEngine;
 
 namespace QualityOfLife
 {
@@ -16,12 +17,18 @@ namespace QualityOfLife
 			Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
 
 			SkipSplash();
+			RunInBackground();
 		}
 
 		private void SkipSplash()
 		{
 			// Load Main Menu
 			ModCore.Utility.LoadScene(1);
+		}
+
+		private void RunInBackground()
+		{
+			Application.runInBackground = true;
 		}
 	}
 }
