@@ -33,3 +33,12 @@ Fixes the following vanilla bugs:
 	In vanilla, if you warp from pause menu after entering Fluffy room A (where Pillow Fort entrance is),
 	you'll always respawn at lake (where you do when you start a new game.
 </details>
+
+<details>
+	<summary>
+	<b>Mapman event error</b>
+	</summary>
+
+	In vanilla, anytime you load a scene that has a Mapman cutscene event after having seen the first one,
+	an exception gets logged to console. This simply removes that exception log to keep the console more tidy.
+</details>

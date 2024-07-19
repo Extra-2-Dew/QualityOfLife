@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,6 +41,29 @@ namespace QualityOfLife
 				return ModCore.Plugin.MainSaver.LevelStorage.GetLocalSaver("A").LoadInt("IntroDialog-39--26") == 0;
 
 			return true;
+		}
+
+		// Fixes vanilla "mapmandone" event causing exception to be logged for no reason, which always
+		// confuses me at first like "oh no, what did I break? Oh, it's just Mapman error. So this just
+		// removes that exception log
+		[HarmonyPrefix]
+		[HarmonyPatch(typeof(GenericGameEvents), nameof(GenericGameEvents.DoSend))]
+		public static bool GenericGameEvents_DoSend_Patch(List<GenericGameEvents.EventFunc> funcs, object data)
+		{
+			for (int i = 0; i < funcs.Count; i++)
+			{
+				try
+				{
+					if (funcs[i] != null)
+						funcs[i](data);
+				}
+				catch
+				{
+					// Don't log anything
+				}
+			}
+
+			return false;
 		}
 	}
 }
