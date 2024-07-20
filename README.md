@@ -4,6 +4,12 @@ This mod adds various quality of life options to improve your experience with It
 
 Note: In the future, these features will be able to be toggled on/off
 
+## Installation
+
+1. Download the latest version of [ModCore](https://github.com/Extra-2-Dew/ModCore) along with its dependencies.
+2. Download the latest release (the zip file) from the [Releases page](https://github.com/Extra-2-Dew/QualityOfLife/releases).
+3. Unzip the release and drop it into your Bepinex plugins folder.
+
 ## What does this do?
 
 ### Splash Skip
